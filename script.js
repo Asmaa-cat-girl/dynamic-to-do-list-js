@@ -3,6 +3,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const addTaskButton = document.getElementById('add-task-btn');
     const taskList = document.getElementById('task-list');
 
+    const addButton = document.createElement('button');
+    addButton.id = 'addbutton';
+    addButton.textContent = 'Add Task';
+
+    // Append the new button to the DOM (choose an appropriate location)
+    document.body.appendChild(addButton); // Or append it to a specific container
+
+    addTaskButton.addEventListener('click', addTask);
+    taskInput.addEventListener('keypress', (event) => {
+        if (event.key === 'Enter') {
+            addTask();
+        }
+    });
+
     addTaskButton.addEventListener('click', addTask);
     taskInput.addEventListener('keypress', (event) => {
         if (event.key === 'Enter') {
